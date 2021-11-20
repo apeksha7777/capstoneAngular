@@ -1,0 +1,30 @@
+<div class="container">
+<h4>Product List</h4>
+<p>
+    <a  [routerLink]="['/admin/addProduct']" name="addNew" class="btn btn-success btn-sm" >Add New</a>
+</p>
+
+    <div  *ngFor="let item of ProductList" style="float:left;padding:8px;">
+    <div class="row p-2 bg-white border rounded">
+        <div class="col-md-3 mt-1"><img src={{item.image}} height="150"></div>
+        <div class="col-md-6 mt-1">
+            <h5>{{item.name}}</h5>
+
+            <p class="truncated">{{item.description}}<br><br></p>
+        </div>
+        <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+            <div class="d-flex flex-row align-items-center">
+                <h4 class="mr-1">₹ {{item.price}}</h4><br />
+
+            </div>
+
+            <div>
+                <a [routerLink]="['/admin/productDetails', item.id]" class="btn btn-outline-secondary btn-sm" type="button">Details</a>
+                <a [routerLink]="['/admin/edit', item.id]" class="btn btn-outline-primary btn-sm"  type="button">Edit</a>
+                <a [routerLink]="['/admin/delete', item.id]" class="btn btn-outline-danger btn-sm" type="button">Delete</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+

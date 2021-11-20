@@ -1,0 +1,35 @@
+<div>
+    <div class="container mydiv">
+<div class="card" >
+    <div class="card-header">Product Details</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                <img src={{product.image}} height="200" width="200" />
+            </div>
+            <div class="col-md-8">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>{{product.name}}</th>
+                            <th>₹{{product.price}}</th>
+                        </tr>
+                        <tr>
+                            
+                            <td>{{product.description}}</td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="2">
+                                <a routerLink='/home' class="btn btn-warning m-1">Continue Shopping</a>
+                                <a  class="btn btn-outline-success m-1">Add to Cart</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>

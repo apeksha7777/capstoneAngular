@@ -1,0 +1,65 @@
+
+
+<div>
+    <div class="container mydiv">
+        <div class="container-fluid justify-content-center search-bar"  style="float: left;">
+            <div class="row">
+                <div class="col-md-5">
+                <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="  Search for medicines and healthcare..."><br>
+        
+
+
+</div>
+<div class="col-md-4">
+    <select id="sort-by" (change)="sort($event)" style="height: 35px;">
+        <option value="" selected disabled hidden>Sort By</option>
+        <option value="Name">Name</option>
+        <option value="Low">Show Low to High Price</option>
+        <option value="High">Show High to Low Price</option>
+    </select>
+</div>
+</div>
+</div>
+<div>
+    SHOP BY HEALTH CONDITIONS <br><br>
+    <div class="row">
+        <div class="col-md-1">
+            <button type="button" class="btn btn-outline-secondary " (click)="filterByCategory('All')">All Products</button>
+            </div>
+
+        <div class="col-md-1">
+    <button type="button" class="btn btn-outline-secondary " (click)="filterByCategory('Diabetes')">Diabetes Care</button>
+    </div>
+    <div class="col-md-1">
+    <button type="button" class="btn btn-outline-secondary "(click)="filterByCategory('Heart')">Heart Care</button>
+    </div>
+    <div class="col-md-1">
+    <button type="button" class="btn btn-outline-secondary "(click)="filterByCategory('Covid')">Covid Care</button>
+    </div>
+    <div class="col-md-1">
+    <button type="button" class="btn btn-outline-secondary "(click)="filterByCategory('Oral')">Oral care</button>
+    </div>
+    
+</div>
+</div>
+
+            <div *ngFor="let item of displayList | filter: searchText" style="float:left;padding:8px;">
+                <div class="row">
+                <div class="col-md-3" style="margin-bottom:15px;">
+                     <div class="card h-100 shadow-sm" style="width:16rem;">
+                        <img class="center" name="ProductImage" src="{{item.image}}"  width="50%" height="105">
+                        <div class="card-body">
+                            <p class="card-text truncatedname" name="ProductName" i><b>{{item.name}}</b></p>
+                            <b name="ProductPrice">₹ {{item.price}}</b>
+                            <p name="ProductDesc" class="truncated">{{item.description}}</p>
+                            <a type="button" [routerLink]="['/product', item.id]" class="btn btn-sm btn-outline-primary" >View Details</a>
+                            <a type="button" (click)="addToCart(item.id)" routerLink="/cart" id='add{{item.id}}' class="btn btn-sm btn-success">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+        
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+<form class="jumbotron" #formProduct="ngForm" (ngSubmit)="addProduct(formProduct.value)" >
+    <div class="form-group">
+      <b><label for="formGroupExampleInput">Image</label></b>
+      <input type="text" class="form-control" name="Image" id="formGroupExampleInput"  placeholder="Example input"  ngModel>
+    </div><br>
+    <div class="form-group">
+       <b> <label for="formGroupExampleInput">Name</label></b>
+        <input type="text" class="form-control" name="Name" id="formGroupExampleInput"  placeholder="Example input"  ngModel>
+      </div><br>
+      <div class="form-group">
+       <b> <label for="formGroupExampleInput">Price</label></b>
+        <input type="text" class="form-control" name="Price" id="formGroupExampleInput"  placeholder="Example input"  ngModel>
+      </div><br>
+      <div class="form-group">
+       <b> <label for="formGroupExampleInput">Description</label></b>
+        <input type="text" class="form-control" name="Description" id="formGroupExampleInput"  placeholder="Example input"  ngModel>
+      </div><br>
+      <div class="form-group">
+        <button  type="submit" class="btn btn-primary" >Add </button>
+      </div><br>
+      <a routerLink='/adminhome'>Back to List</a>
+     
+</form>
+</div>
+</div>
+</div>

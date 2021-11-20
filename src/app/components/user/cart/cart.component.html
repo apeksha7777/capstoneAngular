@@ -1,0 +1,30 @@
+<div class="container">
+<h5>cart</h5>
+<div  *ngFor="let cartList of cartList" style="float:left;padding:8px;">
+    <div class="row p-2 bg-white border rounded">
+        <div class="col-md-3 mt-1"><img  src={{cartList.image}} height="150"></div>
+        <div class="col-md-6 mt-1">
+            <h5 name="PName">{{cartList.name}}</h5>
+           
+            <p class="truncated">{{cartList.description}}<br><br></p>
+        </div>
+        <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+            <div class="d-flex flex-row align-items-center">
+                <h4 class="mr-1">₹ {{cartList.price}}</h4><br />
+
+            </div>
+            <p>Quantity : {{cartList.quantity}}   Item Total: ₹<b>{{cartList.price * cartList.quantity}}</b></p>
+
+            <h6 class="text-success">Free shipping</h6>
+            <div class="d-flex flex-column mt-4"><a class="btn btn-outline-danger btn-sm" (click)=removeItem(cartList.id) type="button">Remove</a></div>
+        </div>
+    </div>
+</div>
+
+<div >
+     <button (click)="checkout(cartTotal,router)" style="margin-left:81%;" id="payButton" class="btn btn-success" >Pay ₹ {{cartTotal}} </button>
+   </div>
+
+<a class="btn btn-warning m-1" routerLink="/home">Continue Shopping</a>
+
+</div>

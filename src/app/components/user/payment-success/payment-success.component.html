@@ -1,0 +1,29 @@
+<h5>Order Status</h5>
+<p style="background-color:green;color:white">Payment Successful. Thank you</p>
+<div class="container border border-success">
+
+    <div *ngFor="let item of cartList"  style="padding:8px;margin-left: 20px;">
+     <div class="row">
+       <div class="col-md-2">
+         <img src="{{item.image}}" style="float:left;height:140px;width:160px;padding: 4px;">
+       </div>
+     
+       <div class="col-md-4"  style="margin-top: 4%;">
+       <p>{{item.name}}</p>
+       </div>
+ 
+       <div class="col-md-1" style="margin-top: 4%;">
+         <p>₹ {{item.price}}</p>
+       </div>
+       <div class="col-md-1" style="margin-top: 4%;">
+        <p> {{item.quantity}} no.s</p>
+      </div>
+ 
+     </div>
+    
+    </div>
+    <div >
+     <b style="margin-left:30%;font-size: 18px;color:green"> Total bill: ₹ {{cartTotal}}</b><br><br>
+     
+    </div>
+   </div>
